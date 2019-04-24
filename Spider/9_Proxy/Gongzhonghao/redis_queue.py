@@ -1,5 +1,5 @@
 from pickle import dumps, loads
-from .get_req import WeixinRequest
+from get_req import WeixinRequest
 from redis import StrictRedis
 from config import *
 

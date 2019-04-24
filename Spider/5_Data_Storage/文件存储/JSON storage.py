@@ -38,7 +38,7 @@ with open('data.json', 'r') as readFile:
 
 # 写入JSON文件
 with open('data.json', 'w') as writeFile:
-    writeFile.write(json.dumps(str2, indent=2)) #indent指定缩进字符个数
+    writeFile.write(json.dumps(str2, indent=4)) #indent指定缩进字符个数
 
 # 当字符串中有中文字符时，需要指定编码方式，并指定参数ensure_ascii为
 # with open('data.json', 'w', encoding='utf-8') as writeFile:

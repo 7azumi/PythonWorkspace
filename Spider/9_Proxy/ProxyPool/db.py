@@ -1,11 +1,4 @@
-MAX_SCORE = 100
-MIN_SCORE = 0
-INITIAL_SCORE = 10
-REDIS_HOST = 'localhost'
-REDIS_PORT = '6739'
-REDIS_PASSWORD = 'None'
-REDIS_KEY = 'proxies'
-
+from setting import *
 import redis
 from random import choice
 from error import PoolEmptyError
@@ -89,3 +82,18 @@ class RedisClient(object):
         :return: 全部代理列表
         """
         return self.db.zrangebyscore(REDIS_KEY, MIN_SCORE, MAX_SCORE)
+
+    def batch(self, start, stop):
+        """
+        批量获取
+        :param start: 开始索引
+        :param stop: 结束索引
+        :return: 代理列表
+        """
+        return self.db.zrevrange(REDIS_KEY, start, stop - 1)
+
+if __name__ == '__main__':
+    conn = RedisClient()
+    result = conn.batch(0, 6)
+    print(conn.count())
+    print(result)

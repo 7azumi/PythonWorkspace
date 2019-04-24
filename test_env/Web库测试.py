@@ -1,17 +1,20 @@
 # Flask库的测试
 from flask import Flask
-'''app = Flask(__name__)
+
+app = Flask(__name__)
+
 
 @app.route("/")
 def hello():
-	return "Hello World!"
+    return "Hello World!"
 
-app.run()'''
 
+app.run()
 
 # Tornado库的测试
 import tornado.ioloop
 import tornado.web
+
 '''class MainHandler(tornado.web.RequestHandler):
 	"""docstring for MainHandler"""
 	def get(self):

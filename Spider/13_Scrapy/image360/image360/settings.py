@@ -10,7 +10,7 @@
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'image360'
-MAX_PAGE = 50
+MAX_PAGE = 5
 
 SPIDER_MODULES = ['image360.spiders']
 NEWSPIDER_MODULE = 'image360.spiders'
@@ -18,6 +18,14 @@ NEWSPIDER_MODULE = 'image360.spiders'
 
 MONGO_URI = 'localhost'
 MONGO_DB = 'image360'
+
+MYSQL_HOST = 'localhost'
+MYSQL_DATABASE = 'images360'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = 'Fl13mysql'
+MYSQL_PORT = '3306'
+
+IMAGE_STORE = './images'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'image360 (+http://www.yourdomain.com)'
@@ -68,9 +76,11 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'image360.pipelines.Image360Pipeline': 300,
-#}
+ITEM_PIPELINES = {
+    'image360.pipelines.ImagePipeline': 300,
+    # 'image360.pipelines.MongoPipeline': 301,
+    'image360.pipelines.MysqlPipeline': 303,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html

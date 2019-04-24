@@ -61,7 +61,7 @@ class Crawler(object, metaclass=ProxyMetaClass):
             re_ip_address = ip_address.findall(html)
             for address, port in re_ip_address:
                 result = address + ':' + port
-                print( result.replace(' ', ''))
+                yield result.replace(' ', '')
 
     def crawl_xicidaili(self):
         for page in range(1,3):
@@ -73,3 +73,4 @@ class Crawler(object, metaclass=ProxyMetaClass):
                 ip = tr.find('td:nth-child(2)').text()
                 port = tr.find('td:nth-child(3)').text()
                 yield ':'.join([ip, port])
+

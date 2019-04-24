@@ -2,7 +2,7 @@ import pygame
 import time
 
 
-filepath = r"E:\workspace\Python\musicplayer\ztj.mp3"
+filepath = r"E:\Music\ape\The Coral Sea - In This Moment's Time.mp3"      #E:\workspace\Python\Basic\musicplayer\ztj.mp3
 
 pygame.mixer.init()
 

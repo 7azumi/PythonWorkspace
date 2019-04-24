@@ -15,6 +15,7 @@ def get_page(offset):
         'from': 'search_tab'
     }
     url = 'https://www.toutiao.com/search_content/?' + urlencode(params)
+    print(url)
     try:
         response = requests.get(url)
         if response.status_code == 200:
@@ -49,7 +50,6 @@ def save_image(item):
                     f.write(response.content)
             else:
                 print('Already Downloaded', file_path)
-
     except requests.ConnectionError:
         print('Failed to Save Image')
 
@@ -63,6 +63,7 @@ def main(offset):
 GROUP_START = 0
 GROUP_END = 10
 
+# 注： 今日头条服务器变更，导致请求参数变更，需要修改请求参数才能正常运行
 if __name__ == '__main__':
     pool = Pool()
     groups = ([x * 20 for x in range(GROUP_START, GROUP_END+1)])
