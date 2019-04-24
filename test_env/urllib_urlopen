@@ -1,6 +1,0 @@
-import urllib.request
-
-url = 'www.baidu.com'
-
-response = urllib.request.urlopen(url)
-print(response.read().decode('utf-8'))
