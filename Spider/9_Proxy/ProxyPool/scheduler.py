@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import time
 from multiprocessing import Process
 from API import app

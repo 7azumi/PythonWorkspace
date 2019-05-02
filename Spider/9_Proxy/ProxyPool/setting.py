@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Redis数据库地址
 REDIS_HOST = '127.0.0.1'
 

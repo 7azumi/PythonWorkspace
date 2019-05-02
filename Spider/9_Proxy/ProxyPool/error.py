@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class PoolEmptyError(Exception):
 
     def __init__(self):

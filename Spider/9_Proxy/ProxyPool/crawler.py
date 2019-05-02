@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from utils import get_page
 import re
 from pyquery import PyQuery as pq
