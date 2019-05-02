@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*- 
 # Flask库的测试
 from flask import Flask
 
