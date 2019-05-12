@@ -7,7 +7,7 @@ REDIS_HOST = '127.0.0.1'
 REDIS_PORT = 6379
 
 # Redis密码，如无填None
-REDIS_PASSWORD = 'louis'
+REDIS_PASSWORD = None
 
 REDIS_KEY = 'proxies'
 
@@ -22,12 +22,12 @@ VALID_STATUS_CODES = [200, 302]
 POOL_UPPER_THRESHOLD = 10000
 
 # 检查周期
-TESTER_CYCLE = 20
+TESTER_CYCLE = 600
 # 获取周期
-GETTER_CYCLE = 300
+GETTER_CYCLE = 3600
 
 # 测试API，建议抓哪个网站测哪个
-TEST_URL = 'https://weixin.sogou.com/weixin?type=2&query=The+coral+sea'
+TEST_URL = 'http://image.so.com/'
 
 # API配置
 API_HOST = '0.0.0.0'
